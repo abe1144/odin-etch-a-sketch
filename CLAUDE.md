@@ -247,10 +247,44 @@ Common things I might ask you:
 ## Notes & Progress
 
 **Challenges I faced:**
-[I'll update this as I work]
+- Figuring out how to make drawing work on click-and-drag (not just hover)
+- Calculating pixel sizes dynamically so the grid always fits the container
+- Implementing progressive darkening using opacity across multiple passes
+- Managing state (is the mouse pressed? is rainbow mode on?) with boolean variables
 
 **What I learned:**
-[I'll note key takeaways]
+
+*DOM Manipulation*
+- Selecting elements with `document.querySelector()` and `document.getElementById()`
+- Dynamically creating elements with `document.createElement()` and adding them with `appendChild()`
+- Clearing the grid by setting `container.innerHTML = ""`
+- Setting inline styles with `element.style.backgroundColor`
+- Using `element.classList.add()`, `.remove()`, and `.contains()` to manage CSS classes
+- Storing custom data directly on elements using `element.dataset`
+
+*Event Handling*
+- Attaching events with `addEventListener()`
+- Using `mousedown`, `mouseover`, and `mouseup` together to simulate click-and-drag drawing
+- Event delegation — attaching one listener to the container instead of every individual square
+- Using `event.target.closest()` to find the nearest matching ancestor element
+
+*JavaScript Concepts*
+- Using `Math.random()` to generate random RGB color values
+- Converting HTMLCollections to arrays with `Array.from()` to use `forEach()`
+- Default parameter values in functions (e.g. `random = false`)
+- Using template literals to build dynamic CSS color strings like `` `rgba(${r}, ${g}, ${b}, ${opacity})` ``
+- Nested loops to build a grid (rows × columns)
+- Managing boolean state variables to track modes and mouse state
+
+*Extra Features Built*
+- Rainbow mode — random RGB color on each square
+- Progressive darkening mode — squares increase in opacity (0.1 per pass) up to fully opaque
+- Slider to dynamically resize the grid (up to 100×100)
+- Clear button that resets all squares back to white
+- Retro Etch-a-Sketch styling with decorative knobs
 
 **Questions for later:**
-[Things to research after completing this exercise]
+- What's the difference between `oninput` and `addEventListener("input", ...)`?
+- When should you use event delegation vs. attaching listeners to individual elements?
+- How does `closest()` traverse the DOM — and what does it return if no match is found?
+- What other data types can be stored in `element.dataset`, and are there any gotchas?
